@@ -26,15 +26,15 @@ module "codedeploy" {
 
   ec2_tag_filters = []
 
-  blue_green_config={
-     action_on_timeout = "CONTINUE_DEPLOYMENT"
-      wait_time_in_minutes= 5
-      green_action=null
-      blue_action = "TERMINATE"
-      termination_wait_time_in_minutes = 5
+  blue_green_config = {
+    action_on_timeout                = "CONTINUE_DEPLOYMENT"
+    wait_time_in_minutes             = 5
+    green_action                     = null
+    blue_action                      = "TERMINATE"
+    termination_wait_time_in_minutes = 5
   }
 
-  style={
+  style = {
     deployment_option = "WITH_TRAFFIC_CONTROL"
     deployment_type   = "BLUE_GREEN"
   }
@@ -43,13 +43,14 @@ module "codedeploy" {
     cluster_name = data.aws_ecs_cluster.pike.arn
     service_name = data.aws_ecs_service.pike.service_name
   }]
-  
-  load_balancer_info=[{
-    aws_lb_listener=["some_arn"]
-    group_blue="blue"
-    group_green="green"
+
+  load_balancer_info = [{
+    aws_lb_listener = ["some_arn"]
+    group_blue      = "blue"
+    group_green     = "green"
   }]
 
+  kms_key_id = aws_kms_key.example.arn
   tags = {
     pike = "permissions"
   }

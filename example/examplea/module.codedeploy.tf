@@ -36,7 +36,7 @@ module "codedeploy" {
       value = "filtervalue"
     }
   ]
-
+  kms_key_id = aws_kms_key.example.arn
   tags = {
     pike = "permissions"
   }

@@ -4,7 +4,6 @@ resource "aws_codedeploy_deployment_group" "example" {
   deployment_group_name  = var.deployment_group_name
   service_role_arn       = aws_iam_role.deploy.arn
 
-
   ec2_tag_set {
     dynamic "ec2_tag_filter" {
       for_each = var.ec2_tag_filters
@@ -61,7 +60,6 @@ resource "aws_codedeploy_deployment_group" "example" {
       service_name = ecs_service.value.service_name
     }
   }
-
 
   load_balancer_info {
     elb_info {

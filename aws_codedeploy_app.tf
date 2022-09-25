@@ -3,5 +3,3 @@ resource "aws_codedeploy_app" "example" {
   name             = var.app.name
   tags             = var.tags
 }
-
-

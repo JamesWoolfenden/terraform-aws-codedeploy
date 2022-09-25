@@ -6,7 +6,6 @@ resource "aws_codedeploy_deployment_config" "pike" {
     value = var.config.minimum_healthy_hosts.value
   }
 
-
   dynamic "traffic_routing_config" {
     for_each = var.traffic_routing_config
     content {
@@ -31,8 +30,4 @@ resource "aws_codedeploy_deployment_config" "pike" {
     }
   }
 
-
-
 }
-
-

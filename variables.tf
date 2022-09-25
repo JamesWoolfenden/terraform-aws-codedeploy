@@ -122,3 +122,7 @@ variable "blue_green_config" {
 
 
 }
+
+
+variable "kms_key_id" {
+}
