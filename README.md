@@ -110,6 +110,33 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": [
+                "codedeploy:CreateApplication",
+                "codedeploy:CreateDeploymentConfig",
+                "codedeploy:CreateDeploymentGroup",
+                "codedeploy:DeleteApplication",
+                "codedeploy:DeleteDeploymentConfig",
+                "codedeploy:DeleteDeploymentGroup",
+                "codedeploy:GetApplication",
+                "codedeploy:GetDeploymentConfig",
+                "codedeploy:GetDeploymentGroup",
+                "codedeploy:ListTagsForResource",
+                "codedeploy:TagResource",
+                "codedeploy:UntagResource"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeAccountAttributes"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
                 "iam:AttachRolePolicy",
                 "iam:CreateRole",
                 "iam:DeleteRole",
@@ -117,7 +144,8 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:GetRole",
                 "iam:ListAttachedRolePolicies",
                 "iam:ListInstanceProfilesForRole",
-                "iam:ListRolePolicies"
+                "iam:ListRolePolicies",
+                "iam:PassRole"
             ],
             "Resource": "*"
         }
