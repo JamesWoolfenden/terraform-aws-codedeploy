@@ -98,18 +98,6 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "SNS:CreateTopic",
-                "SNS:DeleteTopic",
-                "SNS:GetTopicAttributes",
-                "SNS:ListTagsForResource",
-                "SNS:SetTopicAttributes"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": [
                 "codedeploy:CreateApplication",
                 "codedeploy:CreateDeploymentConfig",
                 "codedeploy:CreateDeploymentGroup",
@@ -123,18 +111,22 @@ resource "aws_iam_policy" "terraform_pike" {
                 "codedeploy:TagResource",
                 "codedeploy:UntagResource"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor2",
+            "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": [
                 "ec2:DescribeAccountAttributes"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor3",
+            "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": [
                 "iam:AttachRolePolicy",
@@ -147,7 +139,23 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:ListRolePolicies",
                 "iam:PassRole"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:GetTopicAttributes",
+                "sns:ListTagsForResource",
+                "sns:SetTopicAttributes"
+            ],
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
