@@ -55,11 +55,9 @@ module "codedeploy" {
     pike = "permissions"
   }
 }
-
 data "aws_ecs_cluster" "pike" {
   cluster_name = "pike"
 }
-
 data "aws_ecs_service" "pike" {
   service_name = "pike"
   cluster_arn  = data.aws_ecs_cluster.pike.arn

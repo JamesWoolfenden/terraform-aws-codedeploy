@@ -1,12 +1,9 @@
 variable "tags" {
   type = map(any)
 }
-
 variable "app" {
   type = map(any)
 }
-
-
 variable "config" {
   type = object({
     deployment_config_name = string
@@ -16,7 +13,6 @@ variable "config" {
     })
   })
 }
-
 variable "traffic_routing_config" {
   type = list(object({
     type = string
@@ -31,7 +27,6 @@ variable "traffic_routing_config" {
   }))
 
 }
-
 variable "trigger_configuration" {
   type = object({
     trigger_events = list(string)
@@ -42,12 +37,9 @@ variable "trigger_configuration" {
     trigger_name   = "example-trigger"
   }
 }
-
 variable "ec2_tag_filters" {
   type = list(any)
 }
-
-
 variable "auto_rollback_configuration" {
   type = object({
     events  = list(string)
@@ -59,7 +51,6 @@ variable "auto_rollback_configuration" {
     enabled = true
   }
 }
-
 variable "alarm_configuration" {
   type = object({
     alarms  = list(string)
@@ -71,31 +62,25 @@ variable "alarm_configuration" {
     enabled = true
   }
 }
-
 variable "deployment_group_name" {
   type = string
 }
-
 variable "deployment_config_name" {
   type    = string
   default = "CodeDeployDefault.OneAtATime"
 }
-
 variable "elb_info" {
   type    = string
   default = ""
 }
-
 variable "load_balancer_info" {
   type    = list(any)
   default = []
 }
-
 variable "ecs_services" {
   type    = list(any)
   default = []
 }
-
 variable "style" {
   type = map(any)
   default = {
@@ -103,7 +88,6 @@ variable "style" {
     deployment_type   = "IN_PLACE"
   }
 }
-
 variable "blue_green_config" {
   type = object({
     action_on_timeout                = string
@@ -122,7 +106,5 @@ variable "blue_green_config" {
 
 
 }
-
-
 variable "kms_key_id" {
 }
