@@ -1,6 +1,6 @@
 # terraform-aws-codedeploy
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-codedeploy/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-codedeploy)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-codedeploy/workflows/Verify/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-codedeploy)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-codedeploy.svg)](https://github.com/JamesWoolfenden/terraform-aws-codedeploy/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-codedeploy.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-codedeploy/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
