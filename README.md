@@ -36,7 +36,7 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
@@ -46,7 +46,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_codedeploy_app.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codedeploy_app) | resource |
 | [aws_codedeploy_deployment_config.pike](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codedeploy_deployment_config) | resource |
 | [aws_codedeploy_deployment_group.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codedeploy_deployment_group) | resource |
@@ -57,12 +57,12 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_alarm_configuration"></a> [alarm\_configuration](#input\_alarm\_configuration) | n/a | <pre>object({<br>    alarms  = list(string)<br>    enabled = bool<br>  })</pre> | <pre>{<br>  "alarms": [<br>    "my-alarm-name"<br>  ],<br>  "enabled": true<br>}</pre> | no |
+| ---- | ----------- | ---- | ------- | :------: |
+| <a name="input_alarm_configuration"></a> [alarm\_configuration](#input\_alarm\_configuration) | n/a | <pre>object({<br/>    alarms  = list(string)<br/>    enabled = bool<br/>  })</pre> | <pre>{<br/>  "alarms": [<br/>    "my-alarm-name"<br/>  ],<br/>  "enabled": true<br/>}</pre> | no |
 | <a name="input_app"></a> [app](#input\_app) | n/a | `map(any)` | n/a | yes |
-| <a name="input_auto_rollback_configuration"></a> [auto\_rollback\_configuration](#input\_auto\_rollback\_configuration) | n/a | <pre>object({<br>    events  = list(string)<br>    enabled = bool<br>  })</pre> | <pre>{<br>  "enabled": true,<br>  "events": [<br>    "DEPLOYMENT_FAILURE"<br>  ]<br>}</pre> | no |
-| <a name="input_blue_green_config"></a> [blue\_green\_config](#input\_blue\_green\_config) | n/a | <pre>object({<br>    action_on_timeout                = string<br>    wait_time_in_minutes             = number<br>    green_action                     = string<br>    blue_action                      = string<br>    termination_wait_time_in_minutes = number<br>  })</pre> | <pre>{<br>  "action_on_timeout": null,<br>  "blue_action": null,<br>  "green_action": null,<br>  "termination_wait_time_in_minutes": null,<br>  "wait_time_in_minutes": null<br>}</pre> | no |
-| <a name="input_config"></a> [config](#input\_config) | n/a | <pre>object({<br>    deployment_config_name = string<br>    minimum_healthy_hosts = object({<br>      type  = string<br>      value = number<br>    })<br>  })</pre> | n/a | yes |
+| <a name="input_auto_rollback_configuration"></a> [auto\_rollback\_configuration](#input\_auto\_rollback\_configuration) | n/a | <pre>object({<br/>    events  = list(string)<br/>    enabled = bool<br/>  })</pre> | <pre>{<br/>  "enabled": true,<br/>  "events": [<br/>    "DEPLOYMENT_FAILURE"<br/>  ]<br/>}</pre> | no |
+| <a name="input_blue_green_config"></a> [blue\_green\_config](#input\_blue\_green\_config) | n/a | <pre>object({<br/>    action_on_timeout                = string<br/>    wait_time_in_minutes             = number<br/>    green_action                     = string<br/>    blue_action                      = string<br/>    termination_wait_time_in_minutes = number<br/>  })</pre> | <pre>{<br/>  "action_on_timeout": null,<br/>  "blue_action": null,<br/>  "green_action": null,<br/>  "termination_wait_time_in_minutes": null,<br/>  "wait_time_in_minutes": null<br/>}</pre> | no |
+| <a name="input_config"></a> [config](#input\_config) | n/a | <pre>object({<br/>    deployment_config_name = string<br/>    minimum_healthy_hosts = object({<br/>      type  = string<br/>      value = number<br/>    })<br/>  })</pre> | n/a | yes |
 | <a name="input_deployment_config_name"></a> [deployment\_config\_name](#input\_deployment\_config\_name) | n/a | `string` | `"CodeDeployDefault.OneAtATime"` | no |
 | <a name="input_deployment_group_name"></a> [deployment\_group\_name](#input\_deployment\_group\_name) | n/a | `string` | n/a | yes |
 | <a name="input_ec2_tag_filters"></a> [ec2\_tag\_filters](#input\_ec2\_tag\_filters) | n/a | `list(any)` | n/a | yes |
@@ -70,10 +70,10 @@ No modules.
 | <a name="input_elb_info"></a> [elb\_info](#input\_elb\_info) | n/a | `string` | `""` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | n/a | `any` | n/a | yes |
 | <a name="input_load_balancer_info"></a> [load\_balancer\_info](#input\_load\_balancer\_info) | n/a | `list(any)` | `[]` | no |
-| <a name="input_style"></a> [style](#input\_style) | n/a | `map(any)` | <pre>{<br>  "deployment_option": "WITHOUT_TRAFFIC_CONTROL",<br>  "deployment_type": "IN_PLACE"<br>}</pre> | no |
+| <a name="input_style"></a> [style](#input\_style) | n/a | `map(any)` | <pre>{<br/>  "deployment_option": "WITHOUT_TRAFFIC_CONTROL",<br/>  "deployment_type": "IN_PLACE"<br/>}</pre> | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(any)` | n/a | yes |
-| <a name="input_traffic_routing_config"></a> [traffic\_routing\_config](#input\_traffic\_routing\_config) | n/a | <pre>list(object({<br>    type = string<br>    time_based_linear = list(object({<br>      interval   = number<br>      percentage = number<br>    }))<br>    time_based_canary = list(object({<br>      interval   = number<br>      percentage = number<br>    }))<br>  }))</pre> | n/a | yes |
-| <a name="input_trigger_configuration"></a> [trigger\_configuration](#input\_trigger\_configuration) | n/a | <pre>object({<br>    trigger_events = list(string)<br>    trigger_name   = string<br>  })</pre> | <pre>{<br>  "trigger_events": [<br>    "DeploymentFailure"<br>  ],<br>  "trigger_name": "example-trigger"<br>}</pre> | no |
+| <a name="input_traffic_routing_config"></a> [traffic\_routing\_config](#input\_traffic\_routing\_config) | n/a | <pre>list(object({<br/>    type = string<br/>    time_based_linear = list(object({<br/>      interval   = number<br/>      percentage = number<br/>    }))<br/>    time_based_canary = list(object({<br/>      interval   = number<br/>      percentage = number<br/>    }))<br/>  }))</pre> | n/a | yes |
+| <a name="input_trigger_configuration"></a> [trigger\_configuration](#input\_trigger\_configuration) | n/a | <pre>object({<br/>    trigger_events = list(string)<br/>    trigger_name   = string<br/>  })</pre> | <pre>{<br/>  "trigger_events": [<br/>    "DeploymentFailure"<br/>  ],<br/>  "trigger_name": "example-trigger"<br/>}</pre> | no |
 
 ## Outputs
 
